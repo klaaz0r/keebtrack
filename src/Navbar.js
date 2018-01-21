@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class Navbar extends Component {
   render() {
@@ -6,15 +7,13 @@ class Navbar extends Component {
       <header className="blog-header py-3">
         <div className="row flex-nowrap justify-content-between align-items-center">
           <div className="col-1 text-center">
-            <a className="blog-header-logo text-dark" href="#">⌘keebtrack</a>
+            <Link className="blog-header-logo text-dark" to="/">⌘keebtrack</Link>
           </div>
           <div className="col-4 d-flex justify-content-end align-items-center">
-
-            <a className="btn btn-sm btn-outline-secondary" href="#">Vendor List</a>
+            <Link activeClassName="btn-secondary" className="btn btn-sm btn-outline-secondary" to="vendors">Vendor List</Link>
           </div>
         </div>
       </header>
-
 
     </div>);
   }

@@ -17,6 +17,20 @@ export const getTag = tag => {
   }
 }
 
+export const getRegion = tag => {
+  switch (tag) {
+    case "US":
+      return (<strong className="d-inline-block mb-2 text-primary">US</strong>);
+      break;
+    case "EUROPE":
+      return (<strong className="d-inline-block mb-2 text-success">EUROPE</strong>);
+      break;
+    case "ASIA":
+      return (<strong className="d-inline-block mb-2 text-danger">ASIA</strong>);
+      break;
+  }
+}
+
 const dateToString = d => `${d.getDate()}/${d.getMonth()}/${d.getFullYear()}`
 
 export const getDates = (from, to) => {

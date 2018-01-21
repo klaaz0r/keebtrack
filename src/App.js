@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
+import {Route, Switch} from 'react-router-dom'
 import './App.css';
-import Row from './Row'
 import Header from './Header'
 import Navbar from './Navbar'
+import GroupBuys from './groupbuys/GroupBuys'
+import Vendors from './vendors/Vendors'
 
 class App extends Component {
   constructor(props) {
@@ -50,42 +52,10 @@ class App extends Component {
   render() {
     return (<div className="container">
       <Navbar/>
-      {this.state.items.length === 0 ? null : <Header items={this.state.items.filter(({promoted}) => promoted)}/>}
-      <div className="container">
-        <h3 className="pb-3 mb-4 font-italic border-bottom">
-          Active Group Buys
-        </h3>
-        <form className="search">
-          <div className="form-row">
-            <div className="col-7">
-              <input type="text" className="form-control" placeholder="Search.." onChange={this.filterList}/>
-            </div>
-            <div className="col">
-              <select onChange={this.selectList} className="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                <option defaultValue="default" value="default">Choose...</option>
-                <option value="Keyboard">Keyboard</option>
-                <option value="Keycaps">Keycaps</option>
-                <option value="Parts">Parts</option>
-              </select>
-            </div>
-          </div>
-        </form>
-        <div>
-          {
-            this.state.filtered.map(({
-              name,
-              image,
-              open,
-              close,
-              tag,
-              url,
-              description
-            }, idx) => {
-              return <Row key={idx} name={name} tag={tag} image={image} url={url} description={description} open={open} close={close}/>
-            })
-          }
-        </div>
-      </div>
+      <Switch>
+        <Route path="/vendors" component={Vendors}/>
+        <Route path="/" component={GroupBuys}/>
+      </Switch>
     </div>);
   }
 }

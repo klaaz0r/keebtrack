@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {getTag, getDates} from './util';
+import {getTag, getDates} from '../util';
 
 class Row extends Component {
   render() {
@@ -20,7 +20,7 @@ class Row extends Component {
           <a className="text-dark" href="#">{name}</a>
         </h3>
         {getDates(open, close)}
-        <p className="card-text mb-auto">{description}</p>
+        <p className="card-text mb-auto">{description.slice(0,150) + '..'}</p>
         <a href="#" onClick={() => window.open(`${url}`, "_blank")}>Visit Groupbuy</a>
       </div>
     </div>);
