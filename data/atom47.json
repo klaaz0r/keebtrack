@@ -1,0 +1,10 @@
+{
+  "name": "Atom47",
+  "image": "https://i.imgur.com/BLnZE3h.png",
+  "open": "1515430787",
+  "close": "1519318787",
+  "tag": "parts",
+  "description": "This is a PCB designed especially for the Vortex Core 40% keyboard to be able to use QMK. Because let's face it, its programmability kind of sucks. QMK however, does not suck.(Thanks to the community;))",
+  "url": "https://geekhack.org/index.php?topic=93447.0",
+  "promoted": false
+}
