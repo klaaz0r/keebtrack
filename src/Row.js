@@ -21,7 +21,7 @@ class Row extends Component {
         </h3>
         {getDates(open, close)}
         <p className="card-text mb-auto">{description}</p>
-        <a href="#" onClick={() => window.open(`${url}`, "_blank")}>Go to website</a>
+        <a href="#" onClick={() => window.open(`${url}`, "_blank")}>Visit Groupbuy</a>
       </div>
     </div>);
   }

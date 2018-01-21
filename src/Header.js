@@ -9,7 +9,6 @@ class Header extends Component {
     const item1 = items[0]
     const item2 = items[1]
     const item3 = items[2]
-    console.log(items)
     return (<div className="container">
       <div style={{
           backgroundImage: `linear-gradient( rgba(33, 33, 33, 0.25), rgba(33, 33, 33, 0.25)), url(${item1.image})`
@@ -18,7 +17,7 @@ class Header extends Component {
           <h1 className="display-4 font-italic">{item1.name}</h1>
           <p className="lead my-3">{item1.description}</p>
           <p className="lead mb-0">
-            <a href="#" className="text-white font-weight-bold">More info</a>
+            <a href="#" onClick={() => window.open(`${item1.url}`, "_blank")} className="text-white font-weight-bold">Visit Groupbuy</a>
           </p>
         </div>
       </div>
@@ -33,7 +32,7 @@ class Header extends Component {
               </h3>
               {getDates(item2.open, item2.close)}
               <p className="card-text mb-auto">{item2.description.slice(0,50) + '..'}</p>
-              <a href="#">More info</a>
+              <a href="#" onClick={() => window.open(`${item2.url}`, "_blank")}>Visit Groupbuy</a>
             </div>
             <img className="card-img-right flex-auto d-none d-md-block" src={item2.image} alt="Card image cap"/>
           </div>
@@ -47,7 +46,7 @@ class Header extends Component {
               </h3>
               {getDates(item3.open, item3.close)}
               <p className="card-text mb-auto">{item3.description.slice(0,50) + '..'}</p>
-              <a href="#">More info</a>
+              <a href="#" onClick={() => window.open(`${item3.url}`, "_blank")}>Visit Groupbuy</a>
             </div>
             <img className="card-img-right flex-auto d-none d-md-block" src={item3.image} alt="Card image cap"/></div>
         </div>

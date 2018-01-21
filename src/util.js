@@ -20,7 +20,6 @@ export const getTag = tag => {
 const dateToString = d => `${d.getDate()}/${d.getMonth()}/${d.getFullYear()}`
 
 export const getDates = (from, to) => {
-  console.log(from, to)
   const a = new Date(from * 1000);
   const b = new Date(to * 1000);
   return (<div className="mb-1 text-muted">{dateToString(a)}

@@ -52,17 +52,17 @@ class App extends Component {
       <Navbar/>
       {this.state.items.length === 0 ? null : <Header items={this.state.items.filter(({promoted}) => promoted)}/>}
       <div className="container">
-        <h3 class="pb-3 mb-4 font-italic border-bottom">
+        <h3 className="pb-3 mb-4 font-italic border-bottom">
           Active Group Buys
         </h3>
         <form className="search">
-          <div class="form-row">
-            <div class="col-7">
-              <input type="text" class="form-control" placeholder="Search.." onChange={this.filterList}/>
+          <div className="form-row">
+            <div className="col-7">
+              <input type="text" className="form-control" placeholder="Search.." onChange={this.filterList}/>
             </div>
-            <div class="col">
-              <select onChange={this.selectList} class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                <option selected="selected" value="default">Choose...</option>
+            <div className="col">
+              <select onChange={this.selectList} className="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                <option defaultValue="default" value="default">Choose...</option>
                 <option value="Keyboard">Keyboard</option>
                 <option value="Keycaps">Keycaps</option>
                 <option value="Parts">Parts</option>
@@ -80,8 +80,8 @@ class App extends Component {
               tag,
               url,
               description
-            }) => {
-              return <Row name={name} tag={tag} image={image} url={url} description={description} open={open} close={close}/>
+            }, idx) => {
+              return <Row key={idx} name={name} tag={tag} image={image} url={url} description={description} open={open} close={close}/>
             })
           }
         </div>
